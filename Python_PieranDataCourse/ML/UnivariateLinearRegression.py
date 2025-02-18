@@ -1,3 +1,11 @@
+"""
+This Python script generates a scatter plot of random linear data points and calculates the line of best fit using linear regression.
+It first creates random x and y values, then computes the slope and y-intercept of the best-fit line based on the formula for linear regression.
+The script also calculates the mean of both x and y values, the sum of squared residuals, the standard deviation of residuals, and the R-squared value, 
+which indicates the goodness of the fit. Afterward, it displays the scatter plot of the data points and the line of best fit. 
+The code concludes by printing the slope, y-intercept, standard deviation, and R-squared value to the console.
+"""
+
 from matplotlib import pyplot as plt
 import random
 import sys
