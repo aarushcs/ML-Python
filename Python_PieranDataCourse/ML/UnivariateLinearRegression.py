@@ -20,6 +20,7 @@ for i in range(0,50):
     x_values.append(random.randint(-1000,1000))
     y_values.append(x_values[i]*slope+y_int)
 
+# Shows the plot before proceeding with linear regression.
 plt.scatter(x_values,y_values, color="orange")
 plt.title("Linear Regression Test Data")
 plt.xlabel("x-axis")
