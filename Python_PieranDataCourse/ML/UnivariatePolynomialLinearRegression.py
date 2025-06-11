@@ -3,19 +3,15 @@ from matplotlib import pyplot as plt  # For plotting data
 import random                         # For generating random data
 
 # Function to plot data as either a scatter plot or a line plot
-def plot(x_values, y_values, is_scatter):
+def plot(x_values, y_values, w, b, message, is_scatter):
     if is_scatter == True:
         # Create a scatter plot for raw or observed data
         plt.scatter(x_values, y_values, color="orange")
     else:
-        # Create a line plot for predicted/trend data
-        plt.plot(x_values, y_values, color="orange")
-    
-    # Label the plot
-    plt.title("Linear Regression Test Data")
+        plt.plot(x_values, [w[0]*x**15 + w[1]*x**14 + w[2]*x**13 + w[3]*x**12 + w[4]*x**11 + w[5]*x**10 + w[6]*x**9 + w[7]*x**8 + w[8]*x**7 + w[9]*x**6 + w[10]*x**5 + w[11]*x**4 + w[12]*x**3 + w[13]*x**2 + w[14]*x + b for x in x_values], color="green")  # The best fit line
+    plt.title(message)
     plt.xlabel("x-axis")
     plt.ylabel("y-axis")
-    
     # Display the plot
     plt.show()
 
@@ -69,7 +65,7 @@ def main():
     b = 0
 
     # Plot the raw (unstandardized) data
-    plot(x_values, y_values, True)
+    plot(x_values, y_values,None, None,"Original Plot", True)
 
     # Compute mean and standard deviation of x and y
     mean_x, std_dev_x = mean_and_stddev(x_values)
@@ -85,7 +81,7 @@ def main():
     )
 
     # Plot the normalized data to see how it's centered and scaled
-    plot(x_standardized, y_standardized, True)
+    plot(x_standardized, y_standardized, None, None,"Plot after Z-Score Normalization", True)
 
 # Run the main function only if this script is being executed directly
 if __name__ == "__main__":
