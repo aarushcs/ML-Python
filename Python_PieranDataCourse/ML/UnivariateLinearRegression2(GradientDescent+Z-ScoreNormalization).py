@@ -82,7 +82,6 @@ def Gradient_Descent(w, b, x_standardized, y_standardized, learning_rate=1e-1, e
             # Compute partial derivatives for current sample
             dw +=  (w * x_standardized[j] + b - y_standardized[j]) * x_standardized[j]
             db += (w * x_standardized[j] + b - y_standardized[j])
-        # Average gradients (optional for clarity, not affecting results due to update inside loop)
         dw /= len(x_standardized)
         db /= len(x_standardized)
         w = w - learning_rate * dw
