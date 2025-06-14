@@ -5,7 +5,7 @@ between input x and output y can be learned and evaluated step-by-step.
 
 ### Key Components of the Script:
 
-1. **Random Data Generation**: Creates 15 (x, y) pairs, where y follows a roughly linear pattern 
+1. **Random Data Generation**: Creates 150 (x, y) pairs, where y follows a roughly linear pattern 
    with a randomized slope and intercept, simulating noisy real-world data.
    
 2. **Data Visualization**: 
@@ -18,7 +18,7 @@ between input x and output y can be learned and evaluated step-by-step.
 
 4. **Gradient Descent Training**:
    - Learns optimal parameters (w for slope, b for intercept) using iterative updates.
-   - Reports loss every 100 iterations to track learning progress.
+   - Reports loss every 10000 iterations to track learning progress.
 
 5. **Unstandardization**:
    - Converts the learned slope and intercept back to the original data scale for interpretation.
