@@ -18,7 +18,7 @@ between input x and output y can be learned and evaluated step-by-step.
 
 4. **Gradient Descent Training**:
    - Learns optimal parameters (w for slope, b for intercept) using iterative updates.
-   - Reports loss every 10000 iterations to track learning progress.
+   - Reports loss every 100000 iterations to track learning progress.
 
 5. **Unstandardization**:
    - Converts the learned slope and intercept back to the original data scale for interpretation.
