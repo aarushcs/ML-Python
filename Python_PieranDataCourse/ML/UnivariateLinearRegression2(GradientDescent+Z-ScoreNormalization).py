@@ -74,7 +74,7 @@ def Z_Score_Normalization(x_values, mean_x, std_dev_x):
     return x_standardized
 
 # Gradient Descent to learn best-fit parameters w and b
-def Gradient_Descent(w, b, x_standardized, y_standardized, learning_rate=1e-1, epochs=600000):
+def Gradient_Descent(w, b, x_standardized, y_standardized, learning_rate=1e-4, epochs=500000):
     dw = 0
     db = 0
     for i in range(epochs):
@@ -87,7 +87,7 @@ def Gradient_Descent(w, b, x_standardized, y_standardized, learning_rate=1e-1, e
         w = w - learning_rate * dw
         b = b - learning_rate * db
         # Log loss periodically
-        if (i % 10000 == 0 or i == epochs - 1):
+        if (i % 100000 == 0 or i == epochs - 1):
             print(LossFuncCalc(w, b, x_standardized, y_standardized))
     return w, b
 
@@ -161,6 +161,9 @@ def main():
 
     # Plot final regression line on original data
     plot(x_values, y_values, w, b, "Final Plot", False)
+
+    #Print Equation used for Linear Regression
+    print(f'Equation: y = {w}x + {b}')
 
 # Execute main only when script is run directly
 if __name__ == "__main__":
